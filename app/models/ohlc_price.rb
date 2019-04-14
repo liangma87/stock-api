@@ -1,0 +1,2 @@
+class OhlcPrice < ApplicationRecord
+end
