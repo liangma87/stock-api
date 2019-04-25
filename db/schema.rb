@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_14_002219) do
+ActiveRecord::Schema.define(version: 2019_04_25_023841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,16 +35,19 @@ ActiveRecord::Schema.define(version: 2019_04_14_002219) do
     t.float "low"
     t.float "close"
     t.integer "volume"
-    t.float "uOpen"
-    t.float "uHigh"
-    t.float "uLow"
-    t.float "uClose"
-    t.integer "uVolume"
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "company_id"
     t.index ["company_id"], name: "index_ohlc_prices_on_company_id"
+  end
+
+  create_table "todos", force: :cascade do |t|
+    t.text "notes"
+    t.date "completion_date"
+    t.integer "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
