@@ -1,7 +1,12 @@
 module Api
   module V1
-    # Q:is this needed since it is empty?
     class CompaniesController < ApplicationController
+      before_action :authenticate_user!
+      def index
+        companies = Company.all;
+        render json: companies
+      end
+
     end
   end
 end
