@@ -2,13 +2,13 @@ module Api
   module V1
     class OhlcPricesController < ApplicationController
         def index
-          company = Company.find(params[:company_id]);
-          stocks = company.ohlc_prices.last(100).reverse;
-          render json: stocks
         end
 
         def show
-          
+          company = Company.find_by_symbol(params[:ticker]);
+          stocks = company.ohlc_prices.last(params[:days]).reverse;
+          render json: stocks
+          # TODO error cases here
         end
     end
   end
