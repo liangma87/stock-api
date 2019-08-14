@@ -4,7 +4,18 @@ module Api
       #before_action :authenticate_user!
       def index
         companies = Company.all;
-        render json: companies
+        #render json: companies
+        data = [] # hacked, may not be the right function
+        companies.each do |company|
+          tmp = {
+            name: company.name,
+            symbol: company.symbol,
+            id: company.id,
+            todos: company.todos.length
+          }
+          data.push(tmp)
+        end
+        render json: data
       end
 
     end
