@@ -2,7 +2,7 @@ module Api
   module V1
     class TodosController < ApplicationController
         def index
-          todos = Todo.all;
+          todos = Todo.all.order(:completion_date);
           render json: todos
         end
 
