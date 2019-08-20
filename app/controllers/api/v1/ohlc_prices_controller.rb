@@ -10,6 +10,10 @@ module Api
           render json: stocks
           # TODO error cases here
         end
+
+        def edit
+          
+        end
     end
   end
 end

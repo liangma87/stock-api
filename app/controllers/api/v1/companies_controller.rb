@@ -1,6 +1,7 @@
 module Api
   module V1
     class CompaniesController < ApplicationController
+      # To-to enable before_action
       #before_action :authenticate_user!
       def index
         companies = Company.all;

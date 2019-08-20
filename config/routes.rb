@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       #  resources :ohlc_prices, param: :range, only: [:index, :show]
       #  resources :todos, only: [:index, :show]
       #end
+      patch 'todos/:id', to: 'todos#update'
     end
   end
 
