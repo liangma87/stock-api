@@ -35,7 +35,7 @@ module StockApi
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
-        resource '*', headers: :any, methods: [:get, :post, :options], expose: ['ETag', 'Authorization']
+        resource '*', headers: :any, methods: [:get, :post, :options, :patch], expose: ['ETag', 'Authorization']
       end
     end
   end

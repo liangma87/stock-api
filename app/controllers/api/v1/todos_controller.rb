@@ -17,6 +17,7 @@ module Api
           # Date format y/m/d
           todo = Todo.find(params[:id])
           todo.update_attributes(todo_params)
+          render json: {}, status: 200
         end
 
         private
