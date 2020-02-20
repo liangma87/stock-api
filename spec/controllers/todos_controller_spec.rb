@@ -32,7 +32,22 @@ RSpec.describe Api::V1::TodosController, type: :controller do
       expect(todo.notes).to eq "This is a test"
       expect(todo.completion_date).to eq expected_date
     end
+  end
 
+  describe "todos#create action" do
+
+    let!(:expected_date) {Date.parse('2020-01-01')}
+    let!(:expected_notes) {'This is a test'}
+
+    it "should create both date & notes" do
+      company = FactoryBot.create(:company)
+      post :create, params: {ticker: company.symbol, todo:
+                  {completion_date: expected_date, notes: expected_notes}}
+
+      todo = Todo.last
+      expect(todo.notes).to eq "This is a test"
+      expect(todo.completion_date).to eq expected_date
+    end
   end
 
 end

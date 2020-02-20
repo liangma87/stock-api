@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       #  resources :todos, only: [:index, :show]
       #end
       patch 'todos/:id', to: 'todos#update'
+      post  'todos/:ticker',  to: 'todos#create'
     end
   end
 
