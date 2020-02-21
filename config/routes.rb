@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       #end
       patch 'todos/:id', to: 'todos#update'
       post  'todos/:ticker',  to: 'todos#create'
+      delete  'todos/:id',  to: 'todos#destroy'
     end
   end
 

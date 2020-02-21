@@ -50,4 +50,16 @@ RSpec.describe Api::V1::TodosController, type: :controller do
     end
   end
 
+  describe "todos#destroy action" do
+
+    it "should delete todo" do
+      company = FactoryBot.create(:company)
+      todo = FactoryBot.create(:todo, company_id: company.id)
+      delete :destroy, params: {id: todo.id}
+
+      todo = Todo.find_by_id(todo.id)
+      expect(todo).to eq nil
+    end
+  end
+
 end
