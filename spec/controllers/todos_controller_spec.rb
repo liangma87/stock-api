@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Api::V1::TodosController, type: :controller do
+RSpec.describe Api::TodosController, type: :controller do
   
   describe "todos#update action" do
     
