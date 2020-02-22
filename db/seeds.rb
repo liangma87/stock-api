@@ -6,12 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-#OhlcPrice.create(open: 38, high: 40, low: 36, close: 39)
-chart = IEX::Resources::Chart.get('ESV', '1m')
+# Stock info may need a liscense now, we can do other things now
+jwn = Company.create(symbol: 'JWN', name: 'Nordstrom')
+twtr = Company.create(symbol: 'TWTR', name: 'Twitter')
+eog = Company.create(symbol: 'EOG', name: 'EOG Resource')
+ntdoy = Company.create(symbol: 'NTDOY', name: 'Nintendo')
+user = User.create(email: 'admin@gmail.com', password: "admin1234")
 
-OhlcPrice.create(open: chart[1].open, high: chart[1].high, low: chart[1].low,
-  close: chart[1].close, volume: chart[1].volume, date: chart[1].date)
+jwn.todos.create(notes: "Follow up the news", completion_date: "2017-05-05")
+twtr.todos.create(notes: "Check the cash-flow", completion_date: "2018-05-05")
+eog.todos.create(notes: "Study the competititors", completion_date: "2019-05-05")
+ntdoy.todos.create(notes: "Time to cash out?", completion_date: "2020-05-05")
 
-# remove the unajusted_* columns
- #OhlcPrice.create(open: chart[0].open, high: chart[0].high, low: chart[0].low,
-    #                close: chart[0].close, volume: chart[0].volume, date: chart[0].date)
+jwn.save
+twtr.save
+eog.save
+ntdoy.save
+user.save
+
+# User.destroy_all, Company.destroy_all, Todo.destroy.all

@@ -22,3 +22,13 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# Do the followingn to initialize the example db:
+rake db:seed
+
+# Use the following command for back-end server
+rails server -b 0.0.0.0 -p 8000
+# 0.0.0.0 means listening on all interface including 127.0.0.0 (localhost)
+# 8000 is mapped to 3040
+# 3000 is beinng used for front-end server
+
