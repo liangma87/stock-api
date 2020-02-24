@@ -1,22 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
-# Stock info may need a liscense now, we can do other things now
-jwn = Company.create(symbol: 'JWN', name: 'Nordstrom')
-twtr = Company.create(symbol: 'TWTR', name: 'Twitter')
-eog = Company.create(symbol: 'EOG', name: 'EOG Resource')
-ntdoy = Company.create(symbol: 'NTDOY', name: 'Nintendo')
-#user = User.create(email: 'admin@gmail.com', password: "admin1234")
 
-jwn.todos.create(notes: "Follow up the news", completion_date: "2017-05-05")
-twtr.todos.create(notes: "Check the cash-flow", completion_date: "2018-05-05")
-eog.todos.create(notes: "Study the competititors", completion_date: "2019-05-05")
-ntdoy.todos.create(notes: "Time to cash out?", completion_date: "2020-05-05")
+jwn = Company.find_by_symbol('JWN')
+twtr = Company.find_by_symbol('TWTR')
+eog = Company.find_by_symbol('EOG')
+ntdoy = Company.find_by_symbol('NTODY')
+user = Company.find_by_symbol('JWN')
 
 jwn.diaries.create(notes: "My own shopping experiences show that most popular items sold out very quickly this year. For example, Canada goose sold out in full price. In Portland Nordstrom, there aren’t many people in store but seeing lots of pick up items in store")
 twtr.diaries.create(notes: "Twitter in iOS free app ranked #2 today.  This has never happened in the last 3 years. I wonder if this is due to the billboard marketing that they are doing. Twitter is also showing tweet in the NFL TV during the games, what if they are also doing that during NBA games??")
