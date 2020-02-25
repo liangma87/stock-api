@@ -6,7 +6,7 @@ module Api
       end
 
       def show
-        stock = Company.find_by_symbol(params[:ticker])
+        stock = Company.find(params[:id])
         diaries = stock.diaries
         render json: diaries
       end
