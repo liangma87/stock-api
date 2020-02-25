@@ -1,14 +1,14 @@
 module Api
   class DiariesController < ApplicationController
       def index
-        diaries = Diary.all.order(:update_date)
+        diaries = Diary.all.order(:updated_at)
         render json: diaries
       end
 
       def show
         stock = Company.find_by_symbol(params[:ticker])
         diaries = stock.diaries
-        render json: todos
+        render json: diaries
       end
 
       def update
