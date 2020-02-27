@@ -1,7 +1,7 @@
 module Api
   class DiariesController < ApplicationController
       def index
-        diaries = Diary.all.order(:updated_at)
+        diaries = Diary.all.order(updated_at: :DESC)
         render json: diaries
       end
 
