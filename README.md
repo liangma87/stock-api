@@ -32,3 +32,7 @@ rails server -b 0.0.0.0 -p 8000
 # 8000 is mapped to 3040
 # 3000 is beinng used for front-end server
 
+
+How to add new task, see the below example:
+1, rails g task stocks add_stock
+2, see folder lib/tasks for reference
