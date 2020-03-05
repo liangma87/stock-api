@@ -30,7 +30,7 @@ module Api
 
       private
       def diary_params
-        params.require(:diary).permit(:notes, :ticker)
+        params.require(:diary).permit(:notes, :title)
       end
   end
 end
