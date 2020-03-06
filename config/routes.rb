@@ -14,8 +14,8 @@ Rails.application.routes.draw do
     patch 'todos/:id', to: 'todos#update'
     post  'todos/:ticker',  to: 'todos#create'
     delete  'todos/:id',  to: 'todos#destroy'
-    resources :diaries,  except: [:post]
-    post  'diaries/:ticker',  to: 'diaries#create'
+    resources :thoughts,  except: [:post]
+    post  'thoughts/:ticker',  to: 'thoughts#create'
   end
 
 end

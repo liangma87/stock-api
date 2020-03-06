@@ -9,13 +9,14 @@ FactoryBot.define do
 
   factory :todo do
     notes { "This is default notes" }
-    completion_date { Date.new(2001,2,3) }
+    date { Date.new(2001,2,3) }
     company_id {1}
     user_id {1}
   end
 
-  factory :diary do
+  factory :thought do
     notes {"This is default notes"}
+    title {"This is default title"}
     company_id {1}
   end
 end

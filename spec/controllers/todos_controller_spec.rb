@@ -10,9 +10,9 @@ RSpec.describe Api::TodosController, type: :controller do
     it "should update the date" do
       company = FactoryBot.create(:company)
       todo = FactoryBot.create(:todo, company_id: company.id)
-      patch :update, params: { id: todo.id, todo: { completion_date: expected_date} }
+      patch :update, params: { id: todo.id, todo: { date: expected_date} }
       todo.reload
-      expect(todo.completion_date).to eq expected_date
+      expect(todo.date).to eq expected_date
     end
 
     it "should update the date" do
@@ -27,10 +27,10 @@ RSpec.describe Api::TodosController, type: :controller do
       company = FactoryBot.create(:company)
       todo = FactoryBot.create(:todo, company_id: company.id)
       patch :update, params: {id: todo.id, todo:
-                  {completion_date: expected_date, notes: expected_notes}}
+                  {date: expected_date, notes: expected_notes}}
       todo.reload
       expect(todo.notes).to eq "This is a test"
-      expect(todo.completion_date).to eq expected_date
+      expect(todo.date).to eq expected_date
     end
   end
 
@@ -42,11 +42,11 @@ RSpec.describe Api::TodosController, type: :controller do
     it "should create both date & notes" do
       company = FactoryBot.create(:company)
       post :create, params: {ticker: company.symbol, todo:
-                  {completion_date: expected_date, notes: expected_notes}}
+                  {date: expected_date, notes: expected_notes}}
 
       todo = Todo.last
       expect(todo.notes).to eq "This is a test"
-      expect(todo.completion_date).to eq expected_date
+      expect(todo.date).to eq expected_date
     end
   end
 

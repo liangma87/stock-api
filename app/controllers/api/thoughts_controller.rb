@@ -17,7 +17,7 @@ module Api
       end
 
       def create
-        stock = Thought.find_by_symbol(params[:ticker])
+        stock = Company.find_by_symbol(params[:ticker])
         stock.thoughts.create(thought_params)
         render json: {}, status: 200
       end
