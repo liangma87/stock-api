@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_06_043906) do
+ActiveRecord::Schema.define(version: 2020_03_06_052638) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,15 +29,6 @@ ActiveRecord::Schema.define(version: 2020_03_06_043906) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "diaries", force: :cascade do |t|
-    t.text "notes"
-    t.integer "company_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "title"
-    t.index ["company_id"], name: "index_diaries_on_company_id"
-  end
-
   create_table "ohlc_prices", force: :cascade do |t|
     t.float "open"
     t.float "high"
@@ -49,6 +40,15 @@ ActiveRecord::Schema.define(version: 2020_03_06_043906) do
     t.datetime "updated_at", null: false
     t.integer "company_id"
     t.index ["company_id"], name: "index_ohlc_prices_on_company_id"
+  end
+
+  create_table "thoughts", force: :cascade do |t|
+    t.text "notes"
+    t.integer "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.index ["company_id"], name: "index_thoughts_on_company_id"
   end
 
   create_table "todos", force: :cascade do |t|
