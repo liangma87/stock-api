@@ -1,7 +1,7 @@
 module Api
   class TodosController < ApplicationController
       def index
-        todos = Todo.all.order(:completion_date)
+        todos = Todo.all.order(date: :DESC)
         render json: todos
       end
 
@@ -30,7 +30,7 @@ module Api
 
       private
       def todo_params
-        params.require(:todo).permit(:completion_date, :notes)
+        params.require(:todo).permit(:date, :notes)
       end
   end
 end
